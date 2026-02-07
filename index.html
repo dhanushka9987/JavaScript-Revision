@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Character Selector</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        h1 {
+            margin-bottom: 15px;
+        }
+
+        .image-box {
+            width: 200px;
+            height: 200px;
+            border: 1px solid #aaa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+        }
+
+        .image-box img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        select {
+            padding: 6px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Hello!</h1>
+
+    <!-- Image box -->
+    <div class="image-box">
+        <img id="characterImage" src="images/Garfield.jpg" alt="Garfield">
+    </div>
+
+    <!-- Dropdown -->
+    <select id="characterSelect" onchange="changeImage()">
+        <option value="garfield">Garfield</option>
+        <option value="odie">Odie</option>
+        <option value="nermal">Nermal</option>
+        <option value="jon">Jon</option>
+    </select>
+
+    <script>
+        function changeImage() {
+            const selectedCharacter = document.getElementById("characterSelect").value;
+            const image = document.getElementById("characterImage");
+
+            image.src = "images/" + selectedCharacter + ".jpg";
+            image.alt = selectedCharacter;
+        }
+    </script>
+
+</body>
+</html>
